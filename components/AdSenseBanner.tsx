@@ -34,15 +34,15 @@ export default function AdSenseBanner({
     }, []);
 
     return (
-        <div className="section-container my-8 flex flex-col items-center justify-center bg-gray-50 border border-gray-100 rounded-lg p-4">
+        <div className="section-container my-8 flex flex-col items-center justify-center bg-gray-100 border border-gray-200 rounded-lg p-4 min-h-[250px]">
             <div className="text-xs text-gray-400 mb-2 uppercase tracking-wide font-semibold">
                 Advertisement
             </div>
-            <div className="w-full flex justify-center overflow-hidden min-h-[90px]">
+            <div className="w-full flex justify-center overflow-hidden">
                 {/* AdSense Unit */}
                 <ins
                     className="adsbygoogle"
-                    style={{ display: 'block', minWidth: '300px', minHeight: '50px' }}
+                    style={{ display: 'block', width: '100%', height: '280px' }}
                     data-ad-client={adClient}
                     data-ad-slot={adSlot}
                     data-ad-format={format}

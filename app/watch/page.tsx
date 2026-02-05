@@ -8,7 +8,7 @@ export default function WatchPage() {
                 {/* Main Content */}
                 <div className="flex-grow lg:w-3/4">
                     <div className="bg-white rounded-xl p-1 shadow-sm border border-gray-100 mb-6">
-                        <VideoPlayer src="/free-video.mp4" />
+                        <VideoPlayer mainVideoSrc="/free-video.mp4" />
                     </div>
 
                     <div className="mb-6">
@@ -17,16 +17,6 @@ export default function WatchPage() {
                             This is a demonstration of video playback functionality.
                             The content is royalty-free and for testing purposes only.
                         </p>
-                    </div>
-
-                    <div className="border-t border-gray-200 pt-6">
-                        {/* AdSense Placement: Below Video Content */}
-                        <AdSenseBanner
-                            adClient="ca-pub-XXXXXXXXXXXXXXXX"
-                            adSlot="1234567890"
-                            format="auto"
-                            responsive={true}
-                        />
                     </div>
                 </div>
 
