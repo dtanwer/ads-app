@@ -17,16 +17,21 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Use a fallback to your real ID for verification if the env variable isn't picking up
+  const publisherId = process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID || "ca-pub-8282893350419857";
 
   return (
     <html lang="en" className="light bg-white">
       <head>
-        {/* Placeholder AdSense Script - User to replace Client ID */}
+        {/* FIX 1: Change strategy to 'beforeInteractive' to ensure the crawler sees it immediately.
+          FIX 2: Ensure the ID is correctly injected without quotes inside the URL.
+        */}
         <Script
+          id="adsense-init"
           async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID}`}
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}`}
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col bg-gray-50`}>
